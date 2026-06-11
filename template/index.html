@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="/static/img/ag-white.png?v=1">
+    <link rel="stylesheet" href="/static/stle.css">
+</head>
+<body>
+    <h1 class="header">Ascii Art Generator</h1>
+
+    
+    
+    <form action="/ascii" method="POST">
+        <textarea cols="25" rows="8" name="Input" placeholder="type something here">{{ .Input}}</textarea>
+        <br>
+        <label >
+            <input name="banner" value="standard.txt" type="radio" {{if eq .Banner "standard.txt" }} checked {{end}}>Standard
+        </label>
+
+        <label >
+
+            <input name="banner" value="shadow.txt" type="radio" {{if eq .Banner "shadow.txt" }} checked {{end}}>Shadow
+        </label>
+
+        <label >
+
+            <input name="banner" value="thinkertoy.txt" type="radio" {{if eq .Banner "thinkertoy.txt" }} checked {{end}}>Thinkertoy
+        </label>
+        <br>
+
+        <input type="submit" value="Generate Art">
+    </form>
+
+
+    <pre>{{ .Output}}</pre>
+</body>
+</html>
