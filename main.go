@@ -28,7 +28,7 @@ func HomeHandler(writer http.ResponseWriter, request *http.Request) {
 	}
 
 	hometemp.Execute(writer, Data{})
-	fmt.Fprint(writer, "homepage")
+	// fmt.Fprint(writer, "homepage")
 
 }
 
@@ -53,6 +53,8 @@ func AsciiHandler(writer http.ResponseWriter, request *http.Request) {
 		Style := request.FormValue("banner")
 
 		newascii := GenerateAscii(Word, Style)
+		// fmt.Println("Output:")
+		// fmt.Println(newascii)
 
 		NewData := Data{
 			Input:  Word,
@@ -71,7 +73,8 @@ func AsciiHandler(writer http.ResponseWriter, request *http.Request) {
 	// }
 
 	tempone.Execute(writer, Data{})
-	fmt.Fprint(writer, "asciipage")
+	// fmt.Fprint(writer, "asciipage")
+	// return
 
 	// http.ServeFile(writer, request, "index.html")
 }
